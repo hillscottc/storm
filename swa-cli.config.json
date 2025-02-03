@@ -1,0 +1,13 @@
+{
+  "configurations": {
+    "storm": {
+      "appLocation": ".",
+      "outputLocation": "dist",
+      "appBuildCommand": "npm run build",
+      "run": "npm run dev",
+      "appDevserverUrl": "http://localhost:5173",
+      "appName": "storm",
+      "resourceGroup": "storm-rg"
+    }
+  }
+}
