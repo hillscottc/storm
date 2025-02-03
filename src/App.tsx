@@ -1,25 +1,22 @@
 import * as React from "react";
-import Konvo from "./Konvo";
+import { BrowserRouter } from "react-router";
 import CssBaseline from "@mui/material/CssBaseline";
-import Footer from "./components/Footer";
 import Container from "@mui/material/Container";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Konvo from "./Konvo";
 import "./App.css";
 
 const App: React.FunctionComponent = () => {
   return (
-    <React.Fragment>
+    <BrowserRouter>
       <CssBaseline enableColorScheme />
+      <Header />
       <Container component="main">
-        <div>
-          <a href="/.auth/login/aad">Login</a>
-          <br />
-          <a href="/.auth/logout">Log out</a>
-        </div>
-
         <Konvo />
       </Container>
       <Footer />
-    </React.Fragment>
+    </BrowserRouter>
   );
 };
 
