@@ -1,10 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router";
+import App from "./App";
+import Konvo from "./Konvo";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const root = document.getElementById("root");
+
+if (root) {
+  ReactDOM.createRoot(root).render(
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={<App />} />
+        <Route path="konvo" element={<Konvo />} />
+      </Routes>
+    </BrowserRouter>
+  );
+} else {
+  console.error("Root element not found");
+}
