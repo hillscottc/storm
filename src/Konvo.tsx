@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { DNA as DNASpinner } from "react-loader-spinner";
+import Header from "./components/Header";
 
 const API_KEY = import.meta.env.VITE_OPENAI_APIKEY || "";
 
@@ -109,6 +110,7 @@ const Konvo: React.FunctionComponent = () => {
         // height: "100vh",
       }}
     >
+      <Header />
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Typography variant="h1">KONVO AI</Typography>
       </Box>
@@ -138,11 +140,12 @@ const Konvo: React.FunctionComponent = () => {
                   columns={3}
                   sx={{ justifyContent: "center" }}
                 >
-                  {chatTypes.map((value) => (
+                  {chatTypes.map((value, index) => (
                     <Grid
                       display="flex"
                       justifyContent="center"
                       alignItems="center"
+                      key={index}
                       sx={{
                         borderRadius: 2,
                         backgroundColor: "grey.300",
