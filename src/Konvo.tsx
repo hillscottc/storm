@@ -17,7 +17,7 @@ import Grid from "@mui/material/Grid2";
 import { DNA as DNASpinner } from "react-loader-spinner";
 import Header from "./components/Header";
 
-const API_KEY = import.meta.env.VITE_OPENAI_APIKEY || "";
+const API_KEY = import.meta.env.VITE_OPENAI_SECRET || "";
 
 /* https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety */
 async function fetchChat({
