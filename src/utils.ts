@@ -17,3 +17,14 @@ export async function fetchChat({
   });
   return response.choices[0]?.message?.content;
 }
+
+export async function getUserInfo(): Promise<void> {
+  try {
+    const response = await fetch("/.auth/me");
+    const payload = await response.json();
+    const { clientPrincipal } = payload;
+    return clientPrincipal || {};
+  } catch (e) {
+    console.error("GetUser error: ", e);
+  }
+}

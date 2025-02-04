@@ -10,7 +10,7 @@ const Footer: React.FunctionComponent = () => {
       >
         &nbsp; Scott C Hill ,{" ©"}
         {new Date().getFullYear()},&nbsp;
-        <Link color="inherit" href="https://github.com/hillscottc/openai-fe2">
+        <Link color="inherit" href="https://github.com/hillscottc/storm">
           source
         </Link>
       </Typography>

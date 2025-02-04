@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./App.css";
 import { Link } from "react-router";
+import { Box, Button } from "@mui/material";
 
 const App: React.FunctionComponent = () => {
   return (
@@ -12,9 +13,26 @@ const App: React.FunctionComponent = () => {
       <CssBaseline enableColorScheme />
       <Header />
       <Container component="main">
-        <h2>
-          <Link to="/konvo">KONVO</Link>
-        </h2>
+        <Box sx={{ display: "grid", justifyContent: "center", p: 1, m: 1 }}>
+          <Button
+            to={"/konvo"}
+            component={Link}
+            sx={{ my: 2, display: "block" }}
+            size="large"
+            variant="contained"
+          >
+            KONVO
+          </Button>
+          <Button
+            to={"/apology"}
+            component={Link}
+            sx={{ my: 2, display: "block" }}
+            size="large"
+            variant="contained"
+          >
+            APOLOGY
+          </Button>
+        </Box>
       </Container>
       <Footer />
     </div>

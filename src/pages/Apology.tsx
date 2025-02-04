@@ -17,34 +17,18 @@ import { DNA as DNASpinner } from "react-loader-spinner";
 import Header from "../components/Header";
 import { fetchChat } from "../utils";
 
-const chatTypes = [
-  "rap battle",
-  "love song",
-  "interview",
-  "debate",
-  "argument",
-  "comedy skit",
-];
-
-const sampleItems = [
-  "Trump",
-  "Tupac",
-  "Liz Taylor",
-  "Ghandi",
-  "a cat",
-  "Obama",
-  "Churchill",
-  "a gangster",
-  "Malcolm X",
-  "Eric Cartman",
-  "Taylor Swift",
+const excuseTypes = [
+  "none",
+  "reasonable",
+  "ridiculous",
+  "sarcastic",
+  "embarassing",
 ];
 
 const Apology: React.FunctionComponent = () => {
   const [formData, setFormData] = useState({
-    person1: "",
-    person2: "",
-    chatType: "rap battle",
+    excuseType: "reasonable",
+    toWhom: "",
     topic: "",
   });
   const [chatResults, setChatResults] = useState("");
@@ -54,16 +38,20 @@ const Apology: React.FunctionComponent = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const { chatType, person1, person2, topic } = formData;
-    if (!chatType || !person1 || !person2) {
+    const { excuseType, topic, toWhom } = formData;
+
+    if (!topic) {
       setFormError(true);
       setChatResults("Please fill out all fields.");
       return;
     }
     setFormError(false);
 
-    let content = `Write ${chatType} between ${person1} and ${person2}`;
-    if (topic) content += ` with a topic of ${topic}`;
+    let content = `Write my apology to ${toWhom} for ${topic}`;
+    if (excuseType === "none") content += ` with no excuse`;
+    else content += ` , and include a ${excuseType} excuse`;
+
+    console.log("content:", content);
 
     try {
       setIsLoading(true);
@@ -95,10 +83,70 @@ const Apology: React.FunctionComponent = () => {
         <Typography variant="h1">Apology</Typography>
       </Box>
 
+      <br></br>
+
       <form onSubmit={handleSubmit}>
-        <Box sx={{ display: "flex", justifyContent: "center", p: 1, m: 1 }}>
-          <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
-            Create an interaction!
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "3px",
+          }}
+        >
+          <Typography variant="h4" gutterBottom>
+            To whom?
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <TextField
+            size="small"
+            sx={{ minWidth: "75%" }}
+            onChange={(e) =>
+              setFormData({ ...formData, toWhom: e.target.value })
+            }
+            value={formData.toWhom}
+            label={"who you are apologizing to"}
+            variant="filled"
+            error={formError && !formData.toWhom}
+          />
+        </Box>
+        <br />
+        <br />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "3px",
+          }}
+        >
+          <Typography variant="h4" gutterBottom>
+            For what?
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <TextField
+            size="small"
+            sx={{ minWidth: "75%" }}
+            onChange={(e) =>
+              setFormData({ ...formData, topic: e.target.value })
+            }
+            value={formData.topic}
+            label={"what you did"}
+            variant="filled"
+            error={formError && !formData.topic}
+          />
+        </Box>
+        <br />
+        <br />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "3px",
+          }}
+        >
+          <Typography variant="h4" gutterBottom>
+            How about an Excuse?
           </Typography>
         </Box>
         <Box
@@ -107,10 +155,10 @@ const Apology: React.FunctionComponent = () => {
           <FormControl>
             <RadioGroup
               row
-              defaultValue={"rap battle"}
+              defaultValue={"reasonable"}
               name="radio-buttons-group"
               onChange={(e) =>
-                setFormData({ ...formData, chatType: e.target.value })
+                setFormData({ ...formData, excuseType: e.target.value })
               }
             >
               <Box sx={{ flexGrow: 1 }}>
@@ -120,7 +168,7 @@ const Apology: React.FunctionComponent = () => {
                   columns={3}
                   sx={{ justifyContent: "center" }}
                 >
-                  {chatTypes.map((value, index) => (
+                  {excuseTypes.map((value, index) => (
                     <Grid
                       display="flex"
                       justifyContent="center"
@@ -149,83 +197,11 @@ const Apology: React.FunctionComponent = () => {
               </Box>
             </RadioGroup>
             <FormHelperText>
-              {!formData.chatType && "Please select an option."}
+              {!formData.excuseType && "Please select an option."}
             </FormHelperText>
           </FormControl>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "3px",
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            Choose two people
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "grid",
-            justifyContent: "center",
-            marginBottom: "5px",
-          }}
-        >
-          <Typography variant="body1" gutterBottom sx={{ textAlign: "center" }}>
-            Enter two people or things that can interact.
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            For example:&nbsp;
-            {sampleItems.map((item) => `${item}, `)} etc.
-          </Typography>
-        </Box>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <TextField
-            size="small"
-            onChange={(e) =>
-              setFormData({ ...formData, person1: e.target.value })
-            }
-            value={formData.person1}
-            label={"Person 1"}
-            variant="filled"
-            error={formError && !formData.person1}
-            sx={{ paddingRight: 1 }}
-          />
-          <TextField
-            size="small"
-            onChange={(e) =>
-              setFormData({ ...formData, person2: e.target.value })
-            }
-            value={formData.person2}
-            label={"Person 2"}
-            variant="filled"
-            error={formError && !formData.person2}
-          />
-        </Box>
         <br /> <br />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "3px",
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            Topic (optional)
-          </Typography>
-        </Box>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <TextField
-            size="small"
-            onChange={(e) =>
-              setFormData({ ...formData, topic: e.target.value })
-            }
-            value={formData.topic}
-            label={"any topic"}
-            variant="filled"
-            error={formError && !formData.topic}
-          />
-        </Box>
         <br />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Button variant="contained" type="submit" sx={{ width: "250px" }}>

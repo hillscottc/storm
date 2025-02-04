@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router";
+import { getUserInfo } from "../utils";
 
 /**
  *
@@ -61,7 +62,7 @@ const Header: React.FunctionComponent = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            HillAI
           </Typography>
 
           {/* ******************** */}
@@ -101,6 +102,9 @@ const Header: React.FunctionComponent = () => {
               <MenuItem to={"/konvo"} component={Link}>
                 <Typography sx={{ textAlign: "center" }}>KONVO</Typography>
               </MenuItem>
+              <MenuItem to={"/apology"} component={Link}>
+                <Typography sx={{ textAlign: "center" }}>Apology</Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -120,7 +124,7 @@ const Header: React.FunctionComponent = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            HillAI
           </Typography>
 
           {/* ******************** */}
@@ -141,6 +145,13 @@ const Header: React.FunctionComponent = () => {
               sx={{ my: 2, color: "white", display: "block" }}
             >
               KONVO
+            </Button>
+            <Button
+              to={"/apology"}
+              component={Link}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              APOLOGY
             </Button>
           </Box>
 
@@ -175,6 +186,12 @@ const Header: React.FunctionComponent = () => {
               </MenuItem>
               <MenuItem to={"/.auth/logout"} component={Link}>
                 <Typography sx={{ textAlign: "center" }}>Log out</Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={() => console.log(getUserInfo())}
+                component={Button}
+              >
+                <Typography sx={{ textAlign: "center" }}>Profile</Typography>
               </MenuItem>
             </Menu>
           </Box>
