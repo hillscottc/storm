@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-Deployed at [https://delightful-bay-06ad1331e.4.azurestaticapps.net](https://delightful-bay-06ad1331e.4.azurestaticapps.net)
+Deployed at https://delightful-bay-06ad1331e-preview.westus2.4.azurestaticapps.net
 
 Managed with Azure cli
 

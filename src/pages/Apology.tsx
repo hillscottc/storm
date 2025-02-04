@@ -80,7 +80,7 @@ const Apology: React.FunctionComponent = () => {
     >
       <Header />
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Typography variant="h1">Apology</Typography>
+        <Typography variant="h2">Apology</Typography>
       </Box>
 
       <br></br>

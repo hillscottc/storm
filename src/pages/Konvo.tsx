@@ -92,7 +92,7 @@ const Konvo: React.FunctionComponent = () => {
     >
       <Header />
       <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Typography variant="h1">KONVO AI</Typography>
+        <Typography variant="h2">KONVO AI</Typography>
       </Box>
 
       <form onSubmit={handleSubmit}>
