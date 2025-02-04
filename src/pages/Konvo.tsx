@@ -1,5 +1,4 @@
 import { useState } from "react";
-import OpenAI from "openai";
 import {
   Button,
   Paper,
@@ -15,27 +14,8 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { DNA as DNASpinner } from "react-loader-spinner";
-import Header from "./components/Header";
-
-const API_KEY = import.meta.env.VITE_OPENAI_SECRET || "";
-
-/* https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety */
-async function fetchChat({
-  content = "Tell me a joke",
-  apiKey = "",
-}: {
-  content: string;
-  apiKey: string;
-}): Promise<string | null> {
-  const client = new OpenAI({ apiKey: apiKey, dangerouslyAllowBrowser: true });
-  const response = await client.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content }],
-    temperature: 0.8,
-    max_tokens: 1024,
-  });
-  return response.choices[0]?.message?.content;
-}
+import Header from "../components/Header";
+import { fetchChat } from "../utils";
 
 const chatTypes = [
   "rap battle",
@@ -88,7 +68,7 @@ const Konvo: React.FunctionComponent = () => {
     try {
       setIsLoading(true);
       setChatResults("Thinking...");
-      const chatResponse = await fetchChat({ content, apiKey: API_KEY });
+      const chatResponse = await fetchChat({ content });
       setChatResults(() => chatResponse || "No response");
       setIsLoading(false);
     } catch (error) {
