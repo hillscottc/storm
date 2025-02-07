@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router";
 import { getUserInfo } from "../utils";
-
+import PsychologyIcon from "@mui/icons-material/Psychology";
 /**
  *
  * @returns Header with React Router links and Azure Auth links.
@@ -46,7 +46,7 @@ const Header: React.FunctionComponent = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <PsychologyIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
