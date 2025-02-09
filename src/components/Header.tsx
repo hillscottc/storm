@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router";
 import { getUserInfo } from "../utils";
-import PsychologyIcon from "@mui/icons-material/Psychology";
+import LogoIcon from "./LogoIcon";
 
 /**
  *
@@ -47,7 +47,9 @@ const Header: React.FunctionComponent = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <PsychologyIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+            <LogoIcon />
+          </Box>
           <Typography
             variant="h6"
             noWrap
