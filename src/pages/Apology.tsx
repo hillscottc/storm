@@ -16,6 +16,7 @@ import Grid from "@mui/material/Grid2";
 import { DNA as DNASpinner } from "react-loader-spinner";
 import Header from "../components/Header";
 import { fetchChat } from "../utils";
+import SectionHeading from "../components/SectionHeading";
 
 const excuseTypes = [
   "none",
@@ -86,17 +87,7 @@ const Apology: React.FunctionComponent = () => {
       <br></br>
 
       <form onSubmit={handleSubmit}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "3px",
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            To whom?
-          </Typography>
-        </Box>
+        <SectionHeading title="To whom?" />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <TextField
             size="small"
@@ -111,18 +102,7 @@ const Apology: React.FunctionComponent = () => {
           />
         </Box>
         <br />
-        <br />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "3px",
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            For what?
-          </Typography>
-        </Box>
+        <SectionHeading title="For what?" />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <TextField
             size="small"
@@ -137,18 +117,7 @@ const Apology: React.FunctionComponent = () => {
           />
         </Box>
         <br />
-        <br />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "3px",
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            How about an Excuse?
-          </Typography>
-        </Box>
+        <SectionHeading title="How about an Excuse?" />
         <Box
           sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}
         >

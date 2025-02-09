@@ -16,6 +16,7 @@ import Grid from "@mui/material/Grid2";
 import { DNA as DNASpinner } from "react-loader-spinner";
 import Header from "../components/Header";
 import { fetchChat } from "../utils";
+import SectionHeading from "../components/SectionHeading";
 
 const chatTypes = [
   "rap battle",
@@ -96,11 +97,7 @@ const Konvo: React.FunctionComponent = () => {
       </Box>
 
       <form onSubmit={handleSubmit}>
-        <Box sx={{ display: "flex", justifyContent: "center", p: 1, m: 1 }}>
-          <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
-            Create an interaction!
-          </Typography>
-        </Box>
+        <SectionHeading title="Create an interaction!" />
         <Box
           sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}
         >
@@ -153,17 +150,7 @@ const Konvo: React.FunctionComponent = () => {
             </FormHelperText>
           </FormControl>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "3px",
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            Choose two people
-          </Typography>
-        </Box>
+        <SectionHeading title="Choose two people" />
         <Box
           sx={{
             display: "grid",
@@ -203,17 +190,7 @@ const Konvo: React.FunctionComponent = () => {
           />
         </Box>
         <br /> <br />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "3px",
-          }}
-        >
-          <Typography variant="h4" gutterBottom>
-            Topic (optional)
-          </Typography>
-        </Box>
+        <SectionHeading title="Topic (optional)" />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <TextField
             size="small"

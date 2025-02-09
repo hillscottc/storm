@@ -15,6 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router";
 import { getUserInfo } from "../utils";
 import PsychologyIcon from "@mui/icons-material/Psychology";
+
 /**
  *
  * @returns Header with React Router links and Azure Auth links.

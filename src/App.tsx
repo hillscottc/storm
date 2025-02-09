@@ -1,12 +1,26 @@
 import * as React from "react";
+import styled from "@emotion/styled";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import "./App.css";
 import { Link } from "react-router";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
+import MuiButton from "@mui/material/Button";
 import bgImage from "./assets/bg-tech-glade.svg";
+import "./App.css";
+
+const StyledButton = styled(MuiButton)`
+  background-color: #6200ea;
+  color: white;
+  &:hover {
+    background-color: #3700b3;
+  }
+  padding: 10px 150px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 10px;
+` as typeof MuiButton;
 
 const App: React.FunctionComponent = () => {
   return (
@@ -31,34 +45,23 @@ const App: React.FunctionComponent = () => {
             m: 1,
           }}
         >
-          <Button
-            to={"/konvo"}
+          <StyledButton
+            to="/konvo"
             component={Link}
-            sx={{
-              my: 2,
-              display: "block",
-              minWidth: "400px",
-              textAlign: "center",
-            }}
             size="large"
             variant="contained"
           >
             KONVO
-          </Button>
-          <Button
-            to={"/apology"}
+          </StyledButton>
+
+          <StyledButton
+            to="/apology"
             component={Link}
-            sx={{
-              my: 2,
-              display: "block",
-              minWidth: "400px",
-              textAlign: "center",
-            }}
             size="large"
             variant="contained"
           >
             APOLOGY
-          </Button>
+          </StyledButton>
         </Box>
       </Container>
       <Footer />
