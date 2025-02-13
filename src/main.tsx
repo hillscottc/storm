@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
 import Konvo from "./pages/Konvo";
 import Apology from "./pages/Apology";
+import Admin from "./pages/Admin";
 
 const root = document.getElementById("root");
 
@@ -13,6 +14,7 @@ if (root) {
         <Route index path="/" element={<App />} />
         <Route path="/konvo" element={<Konvo />} />
         <Route path="/apology" element={<Apology />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );

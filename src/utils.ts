@@ -1,4 +1,6 @@
 import OpenAI from "openai";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export const API_KEY = import.meta.env.VITE_OPENAI_SECRET || "";
 
@@ -24,6 +26,35 @@ export async function getUserInfo(): Promise<void> {
     const payload = await response.json();
     const { clientPrincipal } = payload;
     return clientPrincipal || {};
+  } catch (e) {
+    console.error("GetUser error: ", e);
+  }
+}
+
+export async function fetchAIService({
+  content = "Tell me a joke",
+}: {
+  content: string;
+}): Promise<string | void> {
+  const data = { query: content, q: content };
+
+  try {
+    const response = await fetch(
+      "https://functionapponezero.azurewebsites.net/api/queryaiservice",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    console.log("response", response);
+
+    const payload = await response.json();
+    console.log("payload", payload);
+    return payload;
   } catch (e) {
     console.error("GetUser error: ", e);
   }
