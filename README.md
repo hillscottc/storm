@@ -7,5 +7,5 @@ Managed with Azure cli
 ```bash
 az login
 npx swa build
-npx swa deploy --app-name storm
+npx swa deploy --app-name storm --env production                                                                                                                                       ✹ ✭
 ```

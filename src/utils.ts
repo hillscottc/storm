@@ -1,6 +1,4 @@
 import OpenAI from "openai";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 export const API_KEY = import.meta.env.VITE_OPENAI_SECRET || "";
 
