@@ -27,18 +27,15 @@ const App: React.FunctionComponent = () => {
       <Container component="main">
         <Box sx={{ display: "grid", justifyContent: "center", p: 1, m: 1 }}>
           <Box
-            sx={{ backgroundColor: "aliceblue", p: 5, m: 1, borderRadius: 8 }}
+            sx={{ backgroundColor: "aliceblue", p: 1, m: 1, borderRadius: 3 }}
           >
             <Typography style={{ alignSelf: "center" }} variant="h4">
-              This is a little demo project designed to to demonstrate coding an
-              artificial intelligence interface powered by ChatGPT. <br />
-              <br />
-              Click one of the buttons to give it a try.
+              an AI-powered demo
             </Typography>
           </Box>
           <Box sx={{ display: "grid", justifyContent: "center", p: 1, m: 1 }}>
-            <MainButton target="/konvo" text="make a CONVERSATION" />
-            <MainButton target="/apology" text="make an APOLOGY" />
+            <MainButton target="/konvo" text="CONVERSATION" />
+            <MainButton target="/apology" text="APOLOGY" />
           </Box>
         </Box>
       </Container>

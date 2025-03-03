@@ -13,7 +13,7 @@ const StyledButton = styled(MuiButton)`
   }
   padding: 10px 150px;
   border-radius: 20px;
-  font-size: 24px;
+  font-size: 16px;
   margin: 20px;
   font-weight: bold;
 ` as typeof MuiButton;
