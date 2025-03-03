@@ -38,7 +38,10 @@ export async function fetchAIService({
 
   try {
     const response = await fetch(
-      "https://functionapponezero.azurewebsites.net/api/queryaiservice",
+      // "https://functionapponezero.azurewebsites.net/api/queryaiservice",
+      "http://localhost:7071/api/QueryAIService",
+      // "http://localhost:7071/api/JsonExample",
+
       {
         method: "POST",
         headers: {
