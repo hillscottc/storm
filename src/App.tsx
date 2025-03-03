@@ -26,13 +26,13 @@ const App: React.FunctionComponent = () => {
 
       <Container component="main">
         <Box sx={{ display: "grid", justifyContent: "center", p: 1, m: 1 }}>
-          <Box
+          {/* <Box
             sx={{ backgroundColor: "aliceblue", p: 1, m: 1, borderRadius: 3 }}
-          >
-            <Typography style={{ alignSelf: "center" }} variant="h4">
-              an AI-powered demo
-            </Typography>
-          </Box>
+          > */}
+          <Typography style={{ alignSelf: "center" }} variant="h3">
+            an AI-powered demo app
+          </Typography>
+          {/* </Box> */}
           <Box sx={{ display: "grid", justifyContent: "center", p: 1, m: 1 }}>
             <MainButton target="/konvo" text="CONVERSATION" />
             <MainButton target="/apology" text="APOLOGY" />
