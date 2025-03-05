@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { blueGrey, red } from "@mui/material/colors";
+import { blueGrey, red, blue, green } from "@mui/material/colors";
 
 declare module "@mui/material/styles" {
   interface Theme {
@@ -23,12 +23,36 @@ const theme = createTheme({
     primary: {
       main: blueGrey[500],
     },
+    secondary: {
+      main: green[200],
+    },
+    action: {
+      active: blue[400],
+    },
   },
+
   typography: {
     h1: {
       fontSize: "2rem",
       "@media (min-width:600px)": {
         fontSize: "4rem",
+      },
+      radio: {
+        "&$checked": {
+          color: "#4B8DF8",
+        },
+      },
+    },
+    h3: {
+      fontSize: "1rem",
+      marginTop: "1rem",
+      "@media (min-width:600px)": {
+        fontSize: "1.5rem",
+      },
+      radio: {
+        "&$checked": {
+          color: "#4B8DF8",
+        },
       },
     },
   },

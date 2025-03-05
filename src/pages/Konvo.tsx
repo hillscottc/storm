@@ -96,7 +96,7 @@ const Konvo: React.FunctionComponent = () => {
       >
         <Header />
         <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography variant="h2">KONVO AI</Typography>
+          <Typography variant="h3">KONVO</Typography>
         </Box>
 
         <form onSubmit={handleSubmit}>
@@ -128,20 +128,30 @@ const Konvo: React.FunctionComponent = () => {
                         key={index}
                         sx={{
                           borderRadius: 2,
-                          backgroundColor: "grey.300",
-                          width: 100,
+                          backgroundColor: theme.palette.action.active,
+                          color: "white",
+                          width: 150,
                         }}
                       >
                         <FormControlLabel
                           value={value}
                           key={value}
-                          control={<Radio />}
+                          control={
+                            <Radio
+                              sx={{
+                                color: "white",
+                                "&.Mui-checked": {
+                                  color: "magenta",
+                                },
+                              }}
+                            />
+                          }
                           label={
                             <Typography variant="button" sx={{ m: 0, p: 0 }}>
                               {value}
                             </Typography>
                           }
-                          labelPlacement="top"
+                          labelPlacement="end"
                         />
                       </Grid>
                     ))}
@@ -212,7 +222,14 @@ const Konvo: React.FunctionComponent = () => {
           </Box>
           <br />
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Button variant="contained" type="submit" sx={{ width: "250px" }}>
+            <Button
+              variant="contained"
+              type="submit"
+              sx={{
+                width: "250px",
+                backgroundColor: theme.palette.action.active,
+              }}
+            >
               GO !
             </Button>
           </Box>
