@@ -25,3 +25,6 @@ dist-ssr
 
 .env
 local.settings.json
+
+# This is built by the Azure Functions Core Tools 
+*-app.zip

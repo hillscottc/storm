@@ -17,6 +17,7 @@ import Grid from "@mui/material/Grid2";
 import { DNA as DNASpinner } from "react-loader-spinner";
 import { fetchChat } from "../utils";
 import SectionHeading from "../components/SectionHeading";
+import FloatingWords from "../components/FloatingWords";
 import theme from "../theme";
 
 const chatTypes = [
@@ -200,6 +201,7 @@ const InteractionForm: React.FunctionComponent = () => {
               error={formError && !formData.person2}
             />
           </Box>
+          <FloatingWords />
           <br /> <br />
           <SectionHeading title="Topic (optional)" />
           <Box sx={{ display: "flex", justifyContent: "center" }}>
