@@ -15,7 +15,6 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { DNA as DNASpinner } from "react-loader-spinner";
-import Header from "../components/Header";
 import { fetchChat } from "../utils";
 import SectionHeading from "../components/SectionHeading";
 import theme from "../theme";
@@ -43,7 +42,7 @@ const sampleItems = [
   "Taylor Swift",
 ];
 
-const Konvo: React.FunctionComponent = () => {
+const InteractionForm: React.FunctionComponent = () => {
   const [formData, setFormData] = useState({
     person1: "",
     person2: "",
@@ -88,17 +87,12 @@ const Konvo: React.FunctionComponent = () => {
           display: "flex",
           flexDirection: "column",
           padding: "5px",
-          margin: "10px",
+          margin: "0",
           backgroundColor: "#f0f0f0",
           height: "100%",
-          // height: "100vh",
+          width: "100vw",
         }}
       >
-        <Header />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Typography variant="h3">KONVO</Typography>
-        </Box>
-
         <form onSubmit={handleSubmit}>
           <SectionHeading title="Create an interaction!" />
           <Box
@@ -255,4 +249,4 @@ const Konvo: React.FunctionComponent = () => {
   );
 };
 
-export default Konvo;
+export default InteractionForm;

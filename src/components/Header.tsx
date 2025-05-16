@@ -102,12 +102,9 @@ const Header: React.FunctionComponent = () => {
               <MenuItem to={"/"} component={Link}>
                 <Typography sx={{ textAlign: "center" }}>HOME</Typography>
               </MenuItem>
-              <MenuItem to={"/konvo"} component={Link}>
-                <Typography sx={{ textAlign: "center" }}>KONVO</Typography>
-              </MenuItem>
-              <MenuItem to={"/apology"} component={Link}>
+              {/* <MenuItem to={"/apology"} component={Link}>
                 <Typography sx={{ textAlign: "center" }}>Apology</Typography>
-              </MenuItem>
+              </MenuItem> */}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -142,20 +139,13 @@ const Header: React.FunctionComponent = () => {
             >
               HOME
             </Button>
-            <Button
-              to={"/konvo"}
-              component={Link}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              KONVO
-            </Button>
-            <Button
+            {/* <Button
               to={"/apology"}
               component={Link}
               sx={{ my: 2, color: "white", display: "block" }}
             >
               APOLOGY
-            </Button>
+            </Button> */}
           </Box>
 
           {/* ********************* */}
