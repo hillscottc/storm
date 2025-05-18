@@ -2,7 +2,6 @@ import {
   FormControl,
   FormHelperText,
   ThemeProvider,
-  InputLabel,
   Select,
   MenuItem,
 } from "@mui/material";
@@ -11,8 +10,6 @@ import theme from "../../theme";
 import { FormDataInterface } from "./InteractionForm";
 import { chatTypes } from "../../constants.ts";
 import { StyledBox } from "../../components/StyledComponents.tsx";
-
-const LABEL_TEXT = "Kind of interaction";
 
 const KindChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,
@@ -23,16 +20,14 @@ const KindChoice: React.FunctionComponent<FormDataInterface> = ({
   return (
     <ThemeProvider theme={theme}>
       <StyledBox>
-        <SectionHeading title={LABEL_TEXT} />
+        <SectionHeading title="Kind of interaction" />
 
         <FormControl sx={{ minWidth: 120 }} error={formError}>
-          <InputLabel id="demo-simple-select-label">{LABEL_TEXT}</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             sx={{ marginTop: "15px" }}
             value={formData.chatType}
-            label={LABEL_TEXT}
             onChange={(e) =>
               setFormData({ ...formData, chatType: e.target.value })
             }

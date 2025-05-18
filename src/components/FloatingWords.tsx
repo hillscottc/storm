@@ -10,12 +10,20 @@ type WordState = {
   opacity: number;
 };
 
-const FloatingWords: React.FC = () => {
+type FloatingWordsProps = {
+  selectedWord?: string | null;
+  setSelectedWord: (word: string) => void;
+};
+
+const FloatingWords: React.FC<FloatingWordsProps> = ({
+  selectedWord,
+  setSelectedWord,
+}) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const wordRefs = useRef<(HTMLDivElement | null)[]>([]);
   const wordStates = useRef<WordState[]>([]);
 
-  const [selectedWord, setSelectedWord] = useState<string | null>(null);
+  // const [selectedWord, setSelectedWord] = useState<string | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -66,7 +74,7 @@ const FloatingWords: React.FC = () => {
   return (
     <div style={styles.wrapper}>
       <div style={styles.selectedBox}>
-        {selectedWord ? `Selected: ${selectedWord}` : "Click a word"}
+        {selectedWord ? `Selected: ${selectedWord}` : selectedWord}
       </div>
       <div ref={containerRef} style={styles.container}>
         {people.map((word, i) => (

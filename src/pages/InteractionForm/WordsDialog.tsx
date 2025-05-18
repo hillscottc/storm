@@ -7,6 +7,7 @@ export interface SimpleDialogProps {
   open: boolean;
   selectedValue: string;
   onClose: (value: string) => void;
+  // setSelectedValue: (value: string) => void;
 }
 
 export default function WordsDialog(props: SimpleDialogProps) {
@@ -17,6 +18,7 @@ export default function WordsDialog(props: SimpleDialogProps) {
   };
 
   const handleListItemClick = (value: string) => {
+    console.log("value", value);
     onClose(value);
   };
 
@@ -24,9 +26,13 @@ export default function WordsDialog(props: SimpleDialogProps) {
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle>hello</DialogTitle>
 
-      <Button onClick={() => handleListItemClick("wombat")}>wombat</Button>
+      <Button onClick={() => handleListItemClick(selectedValue)}>wombat</Button>
 
-      <FloatingWords />
+      <FloatingWords
+        setSelectedWord={function (word: string): void {
+          console.log("word:", word);
+        }}
+      />
     </Dialog>
   );
 }

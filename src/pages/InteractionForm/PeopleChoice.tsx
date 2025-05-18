@@ -93,8 +93,12 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
           open={openPeople}
           onClose={() => {
             setOpenPeople(false);
+            console.log("selectedValue", selectedValue);
             setFormData({ ...formData, person1: selectedValue });
           }}
+          // setSelectedValue={function (value: string): void {
+          //   setFormData({ ...formData, person1: selectedValue });
+          // }}
         />
         <br /> <br />
       </StyledBox>
