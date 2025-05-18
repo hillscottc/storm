@@ -1,7 +1,8 @@
 import { Box, ThemeProvider, TextField } from "@mui/material";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
-import { StyledBox, FormDataInterface } from "./InteractionForm";
+import { FormDataInterface } from "./InteractionForm";
+import { StyledBox } from "../../components/StyledComponents";
 
 const TopicChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,
@@ -11,13 +12,18 @@ const TopicChoice: React.FunctionComponent<FormDataInterface> = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <StyledBox
-        sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}
-      >
-        <SectionHeading title="Topic (optional)" />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <StyledBox>
+        <SectionHeading title=" (optional) Topic" />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            height: "max-content",
+          }}
+        >
           <TextField
             size="small"
+            sx={{ marginTop: "15px" }}
             onChange={(e) =>
               setFormData({ ...formData, topic: e.target.value })
             }

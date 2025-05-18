@@ -8,8 +8,9 @@ import {
 } from "@mui/material";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
-import { StyledBox, FormDataInterface } from "./InteractionForm";
+import { FormDataInterface } from "./InteractionForm";
 import { chatTypes } from "../../constants.ts";
+import { StyledBox } from "../../components/StyledComponents.tsx";
 
 const LABEL_TEXT = "Kind of interaction";
 
@@ -21,9 +22,7 @@ const KindChoice: React.FunctionComponent<FormDataInterface> = ({
 }) => {
   return (
     <ThemeProvider theme={theme}>
-      <StyledBox
-        sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}
-      >
+      <StyledBox>
         <SectionHeading title={LABEL_TEXT} />
 
         <FormControl sx={{ minWidth: 120 }} error={formError}>
@@ -31,6 +30,7 @@ const KindChoice: React.FunctionComponent<FormDataInterface> = ({
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
+            sx={{ marginTop: "15px" }}
             value={formData.chatType}
             label={LABEL_TEXT}
             onChange={(e) =>

@@ -5,7 +5,6 @@ import {
   Box,
   TextareaAutosize,
   ThemeProvider,
-  styled,
 } from "@mui/material";
 import { DNA as DNASpinner } from "react-loader-spinner";
 import { fetchChat } from "../../utils";
@@ -13,14 +12,6 @@ import theme from "../../theme";
 import KindChoice from "./KindChoice";
 import PeopleChoice from "./PeopleChoice";
 import TopicChoice from "./TopicChoice";
-
-export const StyledBox = styled("div")(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-  backgroundColor: theme.palette.primary.main,
-  display: "flex",
-  justifyContent: "center",
-  marginBottom: 4,
-}));
 
 export type FormData = {
   person1: string;

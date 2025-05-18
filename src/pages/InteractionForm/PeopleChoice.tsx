@@ -8,9 +8,9 @@ import {
 } from "@mui/material";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
-import { StyledBox, FormDataInterface } from "./InteractionForm";
-import { sampleItems } from "../../constants";
+import { FormDataInterface } from "./InteractionForm";
 import WordsDialog from "./WordsDialog";
+import { StyledBox } from "../../components/StyledComponents";
 
 const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,
@@ -26,7 +26,7 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
       <StyledBox
         sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}
       >
-        <SectionHeading title="Choose two people" />
+        <SectionHeading title="Enter two people" />
         <Box
           sx={{
             display: "grid",
@@ -34,12 +34,8 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
             marginBottom: "5px",
           }}
         >
-          <Typography variant="body1" gutterBottom sx={{ textAlign: "center" }}>
-            Enter two people or things that can interact.
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            For example:&nbsp;
-            {sampleItems.map((item) => `${item}, `)} etc.
+          <Typography variant="body1" gutterBottom sx={{ marginTop: "25px" }}>
+            Anyone or anything, live or dead, real or fictional.
           </Typography>
         </Box>
         <Box
@@ -50,10 +46,9 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
             padding: 1,
           }}
         >
-          <Box sx={{ display: "flex", paddingBottom: 1 }}>
+          <Box sx={{ display: "flex", paddingBottom: 1, marginTop: "5px" }}>
             <TextField
               size="small"
-              sx={{ paddingRight: 1, marginRight: 2 }}
               onChange={(e) =>
                 setFormData({ ...formData, person1: e.target.value })
               }
@@ -75,7 +70,6 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
           <Box sx={{ display: "flex" }}>
             <TextField
               size="small"
-              sx={{ paddingRight: 1, marginRight: 2 }}
               onChange={(e) =>
                 setFormData({ ...formData, person2: e.target.value })
               }

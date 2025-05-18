@@ -75,6 +75,7 @@ const theme = createTheme({
         root: {
           backgroundColor: "white",
           borderRadius: "4px",
+          marginRight: "1rem",
         },
       },
     },

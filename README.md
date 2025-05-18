@@ -1,6 +1,6 @@
-# A ChatGPT integration demo app
+# An AI integration demo app
 
-This is a demo project designed to to demonstrate coding an Artificial Intelligence interface powered by ChatGPT.
+This is a demo project designed to to demonstrate coding an AI interface powered by ChatGPT.
 
 Deployed at https://delightful-bay-06ad1331e.4.azurestaticapps.net
 
