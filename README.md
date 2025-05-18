@@ -12,7 +12,11 @@ It is tooled as an [Azure Static Web App](https://azure.microsoft.com/en-us/prod
 
 The frontend is a typescript [React](https://react.dev) app tooled with [Vite](https://vite.dev). Single page architecture with [React Router](https://reactrouter.com/). The styling is [MUI](https://mui.com).
 
-To run:
+## Build
+
+First, you'll need to supply some global environment variables. Rename `.env.sample` to `.env` and supply your own values.
+
+## Start
 
 ```bash
 npx swa start
@@ -24,7 +28,7 @@ npx swa start
 npm run dev
 ```
 
-To deploy:
+## Deploy
 
 ```bash
 az login
