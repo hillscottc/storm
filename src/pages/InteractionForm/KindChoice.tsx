@@ -1,23 +1,22 @@
 import {
-  Typography,
   FormControl,
-  Box,
-  FormControlLabel,
-  RadioGroup,
-  Radio,
   FormHelperText,
   ThemeProvider,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
-import Grid from "@mui/material/Grid2";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
 import { StyledBox, FormDataInterface } from "./InteractionForm";
 import { chatTypes } from "../../constants.ts";
 
+const LABEL_TEXT = "Kind of interaction";
+
 const KindChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,
   setFormData,
-  // formError,
+  formError,
   //   setFormError,
 }) => {
   return (
@@ -25,61 +24,25 @@ const KindChoice: React.FunctionComponent<FormDataInterface> = ({
       <StyledBox
         sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}
       >
-        <SectionHeading title="Create an interaction!" />
-        <FormControl>
-          <RadioGroup
-            row
+        <SectionHeading title={LABEL_TEXT} />
+
+        <FormControl sx={{ minWidth: 120 }} error={formError}>
+          <InputLabel id="demo-simple-select-label">{LABEL_TEXT}</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={formData.chatType}
-            name="radio-buttons-group"
+            label={LABEL_TEXT}
             onChange={(e) =>
               setFormData({ ...formData, chatType: e.target.value })
             }
           >
-            <Box sx={{ flexGrow: 1 }}>
-              <Grid
-                container
-                spacing={1}
-                columns={3}
-                sx={{ justifyContent: "center" }}
-              >
-                {chatTypes.map((value, index) => (
-                  <Grid
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    key={index}
-                    sx={{
-                      borderRadius: 2,
-                      backgroundColor: theme.palette.action.active,
-                      color: "white",
-                      width: 150,
-                    }}
-                  >
-                    <FormControlLabel
-                      value={value}
-                      key={value}
-                      control={
-                        <Radio
-                          sx={{
-                            color: "white",
-                            "&.Mui-checked": {
-                              color: "magenta",
-                            },
-                          }}
-                        />
-                      }
-                      label={
-                        <Typography variant="button" sx={{ m: 0, p: 0 }}>
-                          {value}
-                        </Typography>
-                      }
-                      labelPlacement="end"
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
-          </RadioGroup>
+            {chatTypes.map((value, index) => (
+              <MenuItem key={index} value={value}>
+                {value}
+              </MenuItem>
+            ))}
+          </Select>
           <FormHelperText>
             {!formData.chatType && "Please select an option."}
           </FormHelperText>

@@ -19,6 +19,7 @@ const theme = createTheme({
   status: {
     danger: red[500],
   },
+
   palette: {
     primary: {
       main: blueGrey[500],
@@ -52,6 +53,36 @@ const theme = createTheme({
       radio: {
         "&$checked": {
           color: "#4B8DF8",
+        },
+      },
+    },
+  },
+
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#4B8DF8",
+          color: "white",
+          "&:hover": {
+            backgroundColor: "#3A7BD5",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white",
+          borderRadius: "4px",
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white",
+          borderRadius: "4px",
         },
       },
     },
