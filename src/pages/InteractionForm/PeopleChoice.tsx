@@ -1,8 +1,16 @@
-import { Typography, Box, ThemeProvider, TextField } from "@mui/material";
+import { useState } from "react";
+import {
+  Typography,
+  Box,
+  ThemeProvider,
+  TextField,
+  Button,
+} from "@mui/material";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
 import { StyledBox, FormDataInterface } from "./InteractionForm";
 import { sampleItems } from "../../constants";
+import WordsDialog from "./WordsDialog";
 
 const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,
@@ -10,6 +18,9 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
   formError,
   //   setFormError,
 }) => {
+  const [openPeople, setOpenPeople] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("");
+
   return (
     <ThemeProvider theme={theme}>
       <StyledBox
@@ -31,29 +42,67 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
             {sampleItems.map((item) => `${item}, `)} etc.
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <TextField
-            size="small"
-            onChange={(e) =>
-              setFormData({ ...formData, person1: e.target.value })
-            }
-            value={formData.person1}
-            label={"Person 1"}
-            variant="filled"
-            error={formError && !formData.person1}
-            sx={{ paddingRight: 1 }}
-          />
-          <TextField
-            size="small"
-            onChange={(e) =>
-              setFormData({ ...formData, person2: e.target.value })
-            }
-            value={formData.person2}
-            label={"Person 2"}
-            variant="filled"
-            error={formError && !formData.person2}
-          />
+        <Box
+          sx={{
+            display: "column",
+            height: "max-content",
+            width: "100%",
+            padding: 1,
+          }}
+        >
+          <Box sx={{ display: "flex", paddingBottom: 1 }}>
+            <TextField
+              size="small"
+              sx={{ paddingRight: 1, marginRight: 2 }}
+              onChange={(e) =>
+                setFormData({ ...formData, person1: e.target.value })
+              }
+              value={formData.person1}
+              label={"Person 1"}
+              variant="filled"
+              error={formError && !formData.person1}
+            />
+            <Button
+              variant="outlined"
+              onClick={() => {
+                setOpenPeople(true);
+              }}
+            >
+              ideas
+            </Button>
+          </Box>
+
+          <Box sx={{ display: "flex" }}>
+            <TextField
+              size="small"
+              sx={{ paddingRight: 1, marginRight: 2 }}
+              onChange={(e) =>
+                setFormData({ ...formData, person2: e.target.value })
+              }
+              value={formData.person2}
+              label={"Person 2"}
+              variant="filled"
+              error={formError && !formData.person2}
+            />
+            <Button
+              variant="outlined"
+              onClick={() => {
+                setOpenPeople(true);
+              }}
+            >
+              ideas
+            </Button>
+          </Box>
         </Box>
+        <WordsDialog
+          selectedValue={selectedValue}
+          open={openPeople}
+          onClose={() => {
+            setOpenPeople(false);
+            setFormData({ ...formData, person1: selectedValue });
+          }}
+        />
+        <br /> <br />
       </StyledBox>
     </ThemeProvider>
   );

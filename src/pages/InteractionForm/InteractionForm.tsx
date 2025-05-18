@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { DNA as DNASpinner } from "react-loader-spinner";
 import { fetchChat } from "../../utils";
-import FloatingWords from "../../components/FloatingWords";
 import theme from "../../theme";
 import KindChoice from "./KindChoice";
 import PeopleChoice from "./PeopleChoice";
@@ -101,8 +100,7 @@ const InteractionForm: React.FunctionComponent = () => {
             setFormError={setFormError}
             formError={formError}
           />
-          <FloatingWords />
-          <br /> <br />
+
           <TopicChoice
             formData={formData}
             setFormData={setFormData}
