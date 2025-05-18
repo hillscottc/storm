@@ -4,13 +4,13 @@ import Container from "@mui/material/Container";
 import { Box } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import bgImage from "./assets/bg-tech-glade.svg";
-import InteractionForm from "./pages/InteractionForm";
+import InteractionForm from "./pages/InteractionForm/InteractionForm";
 import theme from "./theme";
 import "./App.css";
 
-const USE_BG_IMAGE = true;
+const USE_BG_IMAGE = false;
 
 const App: React.FunctionComponent = () => {
   return (
@@ -26,7 +26,7 @@ const App: React.FunctionComponent = () => {
         }}
       >
         <CssBaseline enableColorScheme />
-        <Header />
+        {/* <Header /> */}
 
         <Container component="main">
           <Box sx={{ display: "grid", justifyContent: "center", p: 1, m: 1 }}>
