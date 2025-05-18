@@ -12,15 +12,7 @@ import Grid from "@mui/material/Grid2";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
 import { StyledBox, FormDataInterface } from "./InteractionForm";
-
-const chatTypes = [
-  "rap battle",
-  "love song",
-  "interview",
-  "debate",
-  "argument",
-  "comedy skit",
-];
+import { chatTypes } from "../../constants.ts";
 
 const KindChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,

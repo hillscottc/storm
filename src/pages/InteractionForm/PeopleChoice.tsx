@@ -2,20 +2,7 @@ import { Typography, Box, ThemeProvider, TextField } from "@mui/material";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
 import { StyledBox, FormDataInterface } from "./InteractionForm";
-
-const sampleItems = [
-  "Trump",
-  "Tupac",
-  "Liz Taylor",
-  "Ghandi",
-  "a cat",
-  "Obama",
-  "Churchill",
-  "a gangster",
-  "Malcolm X",
-  "Eric Cartman",
-  "Taylor Swift",
-];
+import { sampleItems } from "../../constants";
 
 const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,

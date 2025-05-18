@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import people from "./randomPeople";
+import { people } from "../constants";
 
 type WordState = {
   x: number;

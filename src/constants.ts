@@ -1,4 +1,25 @@
-const people: string[] = [
+export const chatTypes = [
+  "rap battle",
+  "love song",
+  "interview",
+  "debate",
+  "argument",
+  "comedy skit",
+];
+export const sampleItems = [
+  "Trump",
+  "Tupac",
+  "Liz Taylor",
+  "Ghandi",
+  "a cat",
+  "Obama",
+  "Churchill",
+  "a gangster",
+  "Malcolm X",
+  "Eric Cartman",
+  "Taylor Swift",
+];
+export const people: string[] = [
   "Abraham Lincoln",
   "Albert Einstein",
   "Alexander the Great",
@@ -52,5 +73,3 @@ const people: string[] = [
   "Tupac Shakur",
   "Winston Churchill",
 ];
-
-export default people;
