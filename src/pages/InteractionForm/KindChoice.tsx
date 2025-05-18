@@ -22,7 +22,7 @@ const chatTypes = [
   "comedy skit",
 ];
 
-const TypeOptions: React.FunctionComponent<FormDataInterface> = ({
+const KindChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,
   setFormData,
   // formError,
@@ -97,4 +97,4 @@ const TypeOptions: React.FunctionComponent<FormDataInterface> = ({
   );
 };
 
-export default TypeOptions;
+export default KindChoice;

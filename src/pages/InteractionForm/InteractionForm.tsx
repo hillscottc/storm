@@ -11,7 +11,7 @@ import { DNA as DNASpinner } from "react-loader-spinner";
 import { fetchChat } from "../../utils";
 import FloatingWords from "../../components/FloatingWords";
 import theme from "../../theme";
-import TypeOptions from "./TypeOptions";
+import KindChoice from "./KindChoice";
 import PeopleChoice from "./PeopleChoice";
 import TopicChoice from "./TopicChoice";
 
@@ -89,7 +89,7 @@ const InteractionForm: React.FunctionComponent = () => {
         }}
       >
         <form onSubmit={handleSubmit}>
-          <TypeOptions
+          <KindChoice
             formData={formData}
             setFormData={setFormData}
             setFormError={setFormError}
