@@ -126,8 +126,6 @@ const InteractionForm: React.FunctionComponent = () => {
 
         <br />
 
-        {/* {chatResults && <TextareaAutosize value={chatResults} readOnly />} */}
-
         <ResultsDialog
           open={showResults}
           results={chatResults}

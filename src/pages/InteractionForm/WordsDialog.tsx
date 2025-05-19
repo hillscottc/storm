@@ -1,5 +1,4 @@
 import * as React from "react";
-import FloatingWords from "../../components/FloatingWords";
 import {
   Slide,
   AppBar,
@@ -9,8 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-
 import { TransitionProps } from "@mui/material/transitions";
+import FloatingWords from "../../components/FloatingWords";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
