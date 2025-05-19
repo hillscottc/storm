@@ -20,6 +20,7 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
 }) => {
   const [openPeople, setOpenPeople] = useState(false);
   const [selectedValue, setSelectedValue] = useState("");
+  const [personToUpdate, setPersonToUpdate] = useState("person1");
 
   return (
     <ThemeProvider theme={theme}>
@@ -60,6 +61,7 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
             <Button
               variant="outlined"
               onClick={() => {
+                setPersonToUpdate("person1");
                 setOpenPeople(true);
               }}
             >
@@ -81,6 +83,7 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
             <Button
               variant="outlined"
               onClick={() => {
+                setPersonToUpdate("person2");
                 setOpenPeople(true);
               }}
             >
@@ -96,9 +99,14 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
             console.log("selectedValue", selectedValue);
             setFormData({ ...formData, person1: selectedValue });
           }}
-          // setSelectedValue={function (value: string): void {
-          //   setFormData({ ...formData, person1: selectedValue });
-          // }}
+          setSelectedValue={function (word: string): void {
+            if (personToUpdate === "person1") {
+              setFormData({ ...formData, person1: word });
+            } else {
+              setFormData({ ...formData, person2: word });
+            }
+            setOpenPeople(false);
+          }}
         />
         <br /> <br />
       </StyledBox>
