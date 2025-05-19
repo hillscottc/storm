@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import {
   Typography,
   Box,
@@ -12,6 +12,8 @@ import theme from "../../theme";
 import { FormDataInterface } from "./InteractionForm";
 import WordsDialog from "./WordsDialog";
 import { StyledBox } from "../../components/StyledComponents";
+import { Person } from "@mui/icons-material";
+import PersonField from "./PersonField";
 
 const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
   formData,
@@ -25,71 +27,36 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
 
   return (
     <ThemeProvider theme={theme}>
-      <StyledBox
-        sx={{ display: "flex", justifyContent: "center", marginBottom: 4 }}
-      >
+      <StyledBox>
         <SectionHeading title="Enter two people" />
-        <Box
-          sx={{
-            display: "grid",
-            justifyContent: "center",
-            marginBottom: "5px",
-          }}
-        >
-          <Typography variant="body1" gutterBottom sx={{ marginTop: "25px" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", p: 0, m: 0 }}>
+          <Typography variant="body1" gutterBottom sx={{ marginTop: "5px" }}>
             Anyone or anything, live or dead, real or fictional.
           </Typography>
         </Box>
-        <Box
-          sx={{
-            display: "column",
-            height: "max-content",
-            width: "100%",
-            padding: 1,
-          }}
-        >
-          <Box sx={{ display: "flex", paddingBottom: 1, marginTop: "5px" }}>
-            <TextField
-              size="small"
-              onChange={(e) =>
-                setFormData({ ...formData, person1: e.target.value })
-              }
-              value={formData.person1}
-              label={"Person 1"}
-              variant="filled"
-              error={formError && !formData.person1}
-            />
-            <IconButton
-              aria-label="ideas"
-              onClick={() => {
-                setPersonToUpdate("person1");
-                setOpenPeople(true);
+        <Box sx={{ display: "flex", justifyContent: "center", p: 0, m: 0 }}>
+          <Box sx={{ display: "block", marginLeft: "25px" }}>
+            <PersonField
+              {...{
+                formData,
+                setFormData,
+                formError,
+                setPersonToUpdate,
+                setOpenPeople,
+                person: "person1",
               }}
-            >
-              <TipsAndUpdatesIcon />
-            </IconButton>
-          </Box>
+            />
 
-          <Box sx={{ display: "flex" }}>
-            <TextField
-              size="small"
-              onChange={(e) =>
-                setFormData({ ...formData, person2: e.target.value })
-              }
-              value={formData.person2}
-              label={"Person 2"}
-              variant="filled"
-              error={formError && !formData.person2}
-            />
-            <IconButton
-              aria-label="ideas"
-              onClick={() => {
-                setPersonToUpdate("person2");
-                setOpenPeople(true);
+            <PersonField
+              {...{
+                formData,
+                setFormData,
+                formError,
+                setPersonToUpdate,
+                setOpenPeople,
+                person: "person2",
               }}
-            >
-              <TipsAndUpdatesIcon />
-            </IconButton>
+            />
           </Box>
         </Box>
         <WordsDialog

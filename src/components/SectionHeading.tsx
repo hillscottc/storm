@@ -5,7 +5,7 @@ const SectionHeading: React.FunctionComponent<{
 }> = ({ title }) => {
   return (
     <Box sx={{ display: "flex", justifyContent: "center", p: 1, m: 1 }}>
-      <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
+      <Typography variant="h1" sx={{ textAlign: "center" }}>
         {title}
       </Typography>
     </Box>

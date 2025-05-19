@@ -38,22 +38,11 @@ const theme = createTheme({
       "@media (min-width:600px)": {
         fontSize: "4rem",
       },
-      radio: {
-        "&$checked": {
-          color: "#4B8DF8",
-        },
-      },
     },
-    h3: {
-      fontSize: "1rem",
-      marginTop: "1rem",
+    h2: {
+      fontSize: "3rem",
       "@media (min-width:600px)": {
-        fontSize: "1.5rem",
-      },
-      radio: {
-        "&$checked": {
-          color: "#4B8DF8",
-        },
+        fontSize: "6rem",
       },
     },
   },
