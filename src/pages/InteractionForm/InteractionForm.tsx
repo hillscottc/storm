@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Button,
-  Paper,
-  Box,
-  TextareaAutosize,
-  ThemeProvider,
-} from "@mui/material";
+import { Button, Paper, Box, ThemeProvider } from "@mui/material";
 import { DNA as DNASpinner } from "react-loader-spinner";
 import { fetchChat } from "../../utils";
 import theme from "../../theme";
