@@ -7,6 +7,7 @@ import KindChoice from "./KindChoice";
 import PeopleChoice from "./PeopleChoice";
 import TopicChoice from "./TopicChoice";
 import ResultsDialog from "./ResultsDialog";
+import { StyledBox } from "../../components/StyledComponents";
 
 export type FormData = {
   person1: string;
@@ -72,7 +73,7 @@ const InteractionForm: React.FunctionComponent = () => {
           padding: "5px",
           margin: "0",
           backgroundColor: "#f0f0f0",
-          height: "100%",
+          height: "100vh",
           width: "100vw",
         }}
       >
@@ -96,19 +97,28 @@ const InteractionForm: React.FunctionComponent = () => {
             setFormError={setFormError}
             formError={formError}
           />
-          <br />
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              variant="contained"
-              type="submit"
+
+          <StyledBox>
+            <Box
               sx={{
-                width: "250px",
-                backgroundColor: theme.palette.action.active,
+                display: "flex",
+                justifyContent: "center",
+                height: "max-content",
+                padding: "30px",
               }}
             >
-              GO !
-            </Button>
-          </Box>
+              <Button
+                variant="contained"
+                type="submit"
+                sx={{
+                  width: "250px",
+                  backgroundColor: theme.palette.action.active,
+                }}
+              >
+                GO !
+              </Button>
+            </Box>
+          </StyledBox>
         </form>
 
         {isLoading && (

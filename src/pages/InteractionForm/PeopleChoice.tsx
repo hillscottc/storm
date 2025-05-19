@@ -1,18 +1,10 @@
-import { SetStateAction, useState } from "react";
-import {
-  Typography,
-  Box,
-  ThemeProvider,
-  TextField,
-  IconButton,
-} from "@mui/material";
-import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
+import { useState } from "react";
+import { Typography, Box, ThemeProvider } from "@mui/material";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
 import { FormDataInterface } from "./InteractionForm";
 import WordsDialog from "./WordsDialog";
 import { StyledBox } from "../../components/StyledComponents";
-import { Person } from "@mui/icons-material";
 import PersonField from "./PersonField";
 
 const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
@@ -76,7 +68,6 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
             setOpenPeople(false);
           }}
         />
-        <br /> <br />
       </StyledBox>
     </ThemeProvider>
   );

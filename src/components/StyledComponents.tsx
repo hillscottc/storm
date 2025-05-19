@@ -5,5 +5,5 @@ export const StyledBox = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   display: "column",
   justifyContent: "center",
-  // marginBottom: 4,
+  margin: "0",
 }));
