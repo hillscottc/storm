@@ -33,9 +33,9 @@ export default function PersonField(props: iProps) {
     >
       <TextField
         size="small"
-        onChange={(e) => setFormData({ ...formData, person1: e.target.value })}
+        onChange={(e) => setFormData({ ...formData, [person]: e.target.value })}
         value={formData[person]}
-        label={person == "person1" ? "Person 1" : "Person 2"}
+        label={person === "person1" ? "Person 1" : "Person 2"}
         variant="filled"
         error={formError && !formData[person]}
       />
