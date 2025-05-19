@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { people } from "../constants";
 
 type WordState = {
@@ -11,14 +11,10 @@ type WordState = {
 };
 
 type FloatingWordsProps = {
-  selectedWord?: string | null;
   setSelectedWord: (word: string) => void;
 };
 
-const FloatingWords: React.FC<FloatingWordsProps> = ({
-  selectedWord,
-  setSelectedWord,
-}) => {
+const FloatingWords: React.FC<FloatingWordsProps> = ({ setSelectedWord }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const wordRefs = useRef<(HTMLDivElement | null)[]>([]);
   const wordStates = useRef<WordState[]>([]);

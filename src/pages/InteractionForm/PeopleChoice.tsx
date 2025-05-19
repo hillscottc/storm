@@ -19,7 +19,7 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
   //   setFormError,
 }) => {
   const [openPeople, setOpenPeople] = useState(false);
-  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue] = useState("");
   const [personToUpdate, setPersonToUpdate] = useState("person1");
 
   return (
