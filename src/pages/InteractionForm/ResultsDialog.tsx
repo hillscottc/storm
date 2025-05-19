@@ -1,9 +1,8 @@
 import * as React from "react";
-import DialogTitle from "@mui/material/DialogTitle";
-import Dialog from "@mui/material/Dialog";
 import {
   AppBar,
   Button,
+  Dialog,
   IconButton,
   Slide,
   TextareaAutosize,
@@ -11,12 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-
-export interface ResultsDialogProps {
-  open: boolean;
-  onClose: () => void;
-  results: string;
-}
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -27,7 +20,13 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function ResultsDialog(props: ResultsDialogProps) {
+export interface iProps {
+  open: boolean;
+  onClose: () => void;
+  results: string;
+}
+
+export default function ResultsDialog(props: iProps) {
   const { results, open, onClose } = props;
 
   const handleSave = () => {
