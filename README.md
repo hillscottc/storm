@@ -3,6 +3,7 @@
 This is a demo project designed to to demonstrate coding an AI interface powered by ChatGPT.
 
 Deployed at https://delightful-bay-06ad1331e.4.azurestaticapps.net
+It's a responsive design -- will look good on desktop or phone.
 
 The backend is built on Azure, implemented as a [Static Web App](https://azure.microsoft.com/en-us/products/app-service/static) tooled with [swa cli](https://azure.github.io/static-web-apps-cli/).
 

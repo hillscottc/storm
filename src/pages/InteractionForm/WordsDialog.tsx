@@ -18,7 +18,9 @@ export default function WordsDialog(props: SimpleDialogProps) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle sx={{ textAlign: "center" }}>click a name</DialogTitle>
+      <DialogTitle sx={{ textAlign: "center" }}>
+        for example, click a name
+      </DialogTitle>
       <FloatingWords setSelectedWord={setSelectedValue} />
     </Dialog>
   );

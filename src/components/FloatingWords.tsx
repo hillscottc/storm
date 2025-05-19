@@ -69,9 +69,6 @@ const FloatingWords: React.FC<FloatingWordsProps> = ({ setSelectedWord }) => {
 
   return (
     <div style={styles.wrapper}>
-      {/* <div style={styles.selectedBox}>
-        {selectedWord ? `Selected: ${selectedWord}` : selectedWord}
-      </div> */}
       <div ref={containerRef} style={styles.container}>
         {people.map((word, i) => (
           <div

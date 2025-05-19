@@ -12,6 +12,7 @@ import theme from "../../theme";
 import KindChoice from "./KindChoice";
 import PeopleChoice from "./PeopleChoice";
 import TopicChoice from "./TopicChoice";
+import ResultsDialog from "./ResultsDialog";
 
 export type FormData = {
   person1: string;
@@ -37,6 +38,7 @@ const InteractionForm: React.FunctionComponent = () => {
   const [chatResults, setChatResults] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState(false);
+  const [showResults, setShowResults] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -55,11 +57,13 @@ const InteractionForm: React.FunctionComponent = () => {
     try {
       setIsLoading(true);
       setChatResults("Thinking...");
+      setShowResults(true);
       const chatResponse = await fetchChat({ content });
       setChatResults(() => chatResponse || "No response");
       setIsLoading(false);
     } catch (error) {
       setChatResults(`Error: ${error}`);
+      setShowResults(true);
       setIsLoading(false);
     }
   };
@@ -127,7 +131,14 @@ const InteractionForm: React.FunctionComponent = () => {
         )}
 
         <br />
-        {chatResults && <TextareaAutosize value={chatResults} readOnly />}
+
+        {/* {chatResults && <TextareaAutosize value={chatResults} readOnly />} */}
+
+        <ResultsDialog
+          open={showResults}
+          results={chatResults}
+          onClose={() => setShowResults(false)}
+        />
       </Paper>
     </ThemeProvider>
   );

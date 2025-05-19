@@ -4,8 +4,9 @@ import {
   Box,
   ThemeProvider,
   TextField,
-  Button,
+  IconButton,
 } from "@mui/material";
+import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import SectionHeading from "../../components/SectionHeading";
 import theme from "../../theme";
 import { FormDataInterface } from "./InteractionForm";
@@ -58,15 +59,15 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
               variant="filled"
               error={formError && !formData.person1}
             />
-            <Button
-              variant="outlined"
+            <IconButton
+              aria-label="ideas"
               onClick={() => {
                 setPersonToUpdate("person1");
                 setOpenPeople(true);
               }}
             >
-              ideas
-            </Button>
+              <TipsAndUpdatesIcon />
+            </IconButton>
           </Box>
 
           <Box sx={{ display: "flex" }}>
@@ -80,15 +81,15 @@ const PeopleChoice: React.FunctionComponent<FormDataInterface> = ({
               variant="filled"
               error={formError && !formData.person2}
             />
-            <Button
-              variant="outlined"
+            <IconButton
+              aria-label="ideas"
               onClick={() => {
                 setPersonToUpdate("person2");
                 setOpenPeople(true);
               }}
             >
-              ideas
-            </Button>
+              <TipsAndUpdatesIcon />
+            </IconButton>
           </Box>
         </Box>
         <WordsDialog
